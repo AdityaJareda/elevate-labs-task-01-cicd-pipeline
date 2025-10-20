@@ -71,19 +71,24 @@ jobs:
 
 ## How to Run the Application
 
-You can run the deployed application using Docker:
+#### 1. You can run the deployed application using Docker:
 
 ```bash
-# 1. Build the Docker image from the Dockerfile
-docker build -t nodejs-demo-app:local .
+# This command pulls the latest image and starts the container in the background
+docker run --rm -d -p 8080:8080 --name nodejs-app adityajareda/nodejs-demo-app:latest
+```
+The `--rm` flag in the docker run command automatically removes the container when it is stopped.
 
-# 2. Run the image as a container in detached mode
-docker run --rm -d -p 8080:8080 --name nodejs-app nodejs-demo-app:local
+### 2. To verify the application is running, you can use curl:
 
-# 3. Test the endpoint
+```bash
 curl http://localhost:8080
-# Expected output: Hello World!
+# You should see the output: Hello World!
+```
 
-# 4. Clean up by stopping and removing the container
+
+#### 3. To stop the application:
+
+```bash
 docker stop nodejs-app
 ```
