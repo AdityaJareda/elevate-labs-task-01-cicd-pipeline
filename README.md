@@ -92,3 +92,9 @@ curl http://localhost:8080
 ```bash
 docker stop nodejs-app
 ```
+
+### Verification Screenshot
+
+Here is a screenshot of the container running successfully on a local machine.
+
+![Proof of Running Application](./app-running-proof.png)
